@@ -6,11 +6,21 @@
         <meta charset="UTF-8">
         <title>StuCo - Login</title>
         <link rel="stylesheet" href="login.css">
-        <script src = "main.js"></script>
+        
     </head>
 
     <body>
-        
+        <form id ="username">
+        <label for="username">Input Username:</label>
+        <input type="text" id="username" placeholder = "Enter your username..." name="username" required></input>
+        </form>
+        <form id = "password">
+        <label for="password">Input Password:</label>
+        <input type = "password" id = "password" placeholder = "Enter your password..." name = "password" required>
+        </form>
+        <button onclick = "login.js">Submit</button>
+        <script src = "login.js"></script>
+        </div>
     </body>
 
 </html>
