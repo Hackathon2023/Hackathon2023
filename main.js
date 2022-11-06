@@ -1,14 +1,18 @@
+import {Question} from questionAnswer.js
+import {Answer} from questionAnswer.js
 var currentPage = "login";
 var username;
 var password;
 
-function changePage(nextPage)
+function changePage(nextPage) //may need fxing 
+//Changes the page
 {
     window.location.href = nextPage + ".html";
     currentPage = nextPage;
 }
 
-function checkUsername()
+function checkUsername() //done
+//Checks the username of the user 
 {
     let username = getCookie("username");
 

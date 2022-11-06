@@ -6,9 +6,8 @@ upvote downvote aggregatte
 new page of answer
 */
 
-const { initial } = require("lodash");
 
-class Question {
+export class Question {
 
   constructor(question, course, timestamp, answers = [], downvotes = 0, upvotes = 0)
   {
@@ -53,7 +52,7 @@ class Question {
   }
 }
 
-class Answer{
+export class Answer{
   constructor(text, upvotes = 0, downvotes = 0)
   {
     this.text = text;
