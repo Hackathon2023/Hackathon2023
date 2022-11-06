@@ -26,16 +26,17 @@
         let num = "" ;
         let result = "";
         let questions = [];
-        console.log(classes)
-        document.cookie = username = "Harper"
+        console.log(classes);
+        document.cookie = username = "Harper";
         for(let course in classes){
             opti = document.createElement("option");
             opti.setAttribute("value", course);
             document.getElementById("departList").appendChild(opti);
         }
+
         function onInput() {
-            console.log("onInput")
-            console.log(document.getElementById("departList"))
+            console.log("onInput");
+            console.log(document.getElementById("departList"));
             while(document.getElementById("classList").hasChildNodes()){
                 document.getElementById("classList").removeChild(document.getElementById("classList").firstChild);
             }
@@ -50,14 +51,11 @@
             }
         }
         function search(){
-            
-
-            
             num = document.getElementById("course").value; 
-            result = dept + num
-            console.log(result)
+            result = dept + num;
+            console.log(result);
 
-            questions = ["a","b","c"]//getClass(result)
+            questions = ["a","b","c"]; //getClass(result)
             updateQuestions();
         }
         
@@ -65,19 +63,24 @@
             //for(child in document.)
             //document.body.removeChild(document.body.btn);
 
-
             let elements = [];
             for(let ID in questions){
-                elements.push(questions[ID])//(getQuestion(ID)) 
+                elements.push(questions[ID]); //(getQuestion(ID)) 
             }
+
+            for (let e in document.getElementsByClassName("question"))
+            {
+
+            }
+
             for(let e in elements){
                 let btn = document.createElement("button");
+                btn.setAttribute("class", "question");
                 btn.innerHTML = elements[e];
                 btn.onclick = function (){
                     document.cookie = "question = " + elements[e];
-                    console.log(document.cookie)
-                    window.location.href= 'file:///Users/harper/Desktop/Coding/Coding%20Projects/Hackathon2023/questions.html';
-
+                    console.log(document.cookie);
+                    window.location.href= '/questions.html';
                 }
                 document.body.appendChild(btn);
             }
@@ -87,10 +90,9 @@
             if(event.key === 'Enter'){
                 questions.push(ele.value);
                 console.log(questions);
-                updateQuestions()
+                updateQuestions();
                 //postQuestion(result,ele.value) 
             }
         }
-
     </script>
-</html>
+</html> 
