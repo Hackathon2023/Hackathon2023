@@ -1,0 +1,16 @@
+body {
+    height:1000px;
+    background-image: linear-gradient(white, lightblue);
+}
+
+button {
+    width: 75%;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    padding: 50px;
+    margin: auto;
+    position: fixed;
+    left: 12.5%;
+}
+
+
