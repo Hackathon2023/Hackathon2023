@@ -7,24 +7,25 @@
         <title>StuCo - Login</title>
         <link rel="stylesheet" href="dropdown.css">
         <script type = "text/javascript" src ="classes.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
         <script src = "questionAnswer.js"></script>
         
 
     </head>
     <body>
         <label for="departments">Choose a department:</label>
-        <input list="departList" oninput="onInput()" id="department" name="departments" />
+        <input list="departList" placeholder= "Choose a department..." oninput="onInput()" id="department" name="departments" />
         <datalist id="departList">
         </datalist>
-        <input list = "classList" oninput = "search()" id = "course" name = "courses" />
+        <input list = "classList" placeholder="Choose a class number..." oninput = "search()" id = "course" name = "courses" />
         <datalist id = classList> 
         </datalist>
-        
+        <input type = "text" placeholder="Ask your own question..." class = "post" onkeydown="post(this)" />
     </body>
     <script>
-        let dept = ""
-        let num = "" 
+        let dept = "";
+        let num = "" ;
+        let result = "";
+        let questions = [];
         console.log(classes)
         document.cookie = username = "Harper"
         for(let course in classes){
@@ -53,16 +54,21 @@
 
             
             num = document.getElementById("course").value; 
-            result = dept + " " + num
-            let questions = ["a","b","c"]//getClass(result) //getClass(class_id) -> {questions(answer_id[])}
-            /* Sequence of events:
-            Get list of all questions 
-            Display questions as buttons
-            */
-            let elements = []
-            for(let ID in questions){
-                elements.push(questions[ID])//(getQuestion(ID)) //getQuestion(question_id) -> {body(str), upvotes(num), downvotes(num), answers(answer_id[])}
+            result = dept + num
+            console.log(result)
 
+            questions = ["a","b","c"]//getClass(result)
+            updateQuestions();
+        }
+        
+        function updateQuestions(){
+            //for(child in document.)
+            //document.body.removeChild(document.body.btn);
+
+
+            let elements = [];
+            for(let ID in questions){
+                elements.push(questions[ID])//(getQuestion(ID)) 
             }
             for(let e in elements){
                 let btn = document.createElement("button");
@@ -75,12 +81,16 @@
                 }
                 document.body.appendChild(btn);
             }
+        }
 
-            
+        function post(ele){
+            if(event.key === 'Enter'){
+                questions.push(ele.value);
+                console.log(questions);
+                updateQuestions()
+                //postQuestion(result,ele.value) 
+            }
         }
-        function game(text){
-            alert(text);
-        }
-        
+
     </script>
 </html>
