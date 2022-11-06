@@ -7,7 +7,7 @@ new page of answer
 */
 
 
-export class Question {
+class Question {
 
   constructor(question, course, timestamp, answers = [], downvotes = 0, upvotes = 0)
   {
@@ -52,7 +52,7 @@ export class Question {
   }
 }
 
-export class Answer{
+class Answer{
   constructor(text, upvotes = 0, downvotes = 0)
   {
     this.text = text;

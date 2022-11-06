@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>StuCo - Login</title>
+        <link rel="stylesheet" href="dropdown.css">
+        <script type = "text/javascript" src ="classes.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src = "questionAnswer.js"></script>
+        
+
+    </head>
+    <body>
+        <label for="departments">Choose a department:</label>
+        <input list="departList" oninput="onInput()" id="department" name="departments" />
+        <datalist id="departList">
+        </datalist>
+        <input list = "classList" oninput = "search()" id = "course" name = "courses" />
+        <datalist id = classList> 
+        </datalist>
+        
+    </body>
+    <script>
+        let dept = ""
+        let num = "" 
+        console.log(classes)
+        document.cookie = username = "Harper"
+        for(let course in classes){
+            opti = document.createElement("option");
+            opti.setAttribute("value", course);
+            document.getElementById("departList").appendChild(opti);
+        }
+        function onInput() {
+            console.log("onInput")
+            console.log(document.getElementById("departList"))
+            while(document.getElementById("classList").hasChildNodes()){
+                document.getElementById("classList").removeChild(document.getElementById("classList").firstChild);
+            }
+            
+            var val = document.getElementById("department").value;
+            dept = val;
+            for(let number in classes[val]){
+                    opti = document.createElement("option");
+                    opti.setAttribute("value", classes[val][number]);
+                    document.getElementById("classList").appendChild(opti);
+
+            }
+        }
+        function search(){
+            
+
+            
+            num = document.getElementById("course").value; 
+            result = dept + " " + num
+            let questions = ["a","b","c"]//getClass(result) //getClass(class_id) -> {questions(answer_id[])}
+            /* Sequence of events:
+            Get list of all questions 
+            Display questions as buttons
+            */
+            let elements = []
+            for(let ID in questions){
+                elements.push(questions[ID])//(getQuestion(ID)) //getQuestion(question_id) -> {body(str), upvotes(num), downvotes(num), answers(answer_id[])}
+
+            }
+            for(let e in elements){
+                let btn = document.createElement("button");
+                btn.innerHTML = elements[e];
+                btn.onclick = function (){
+                    document.cookie = "question = " + elements[e];
+                    console.log(document.cookie)
+                    window.location.href= 'file:///Users/harper/Desktop/Coding/Coding%20Projects/Hackathon2023/questions.html';
+
+                }
+                document.body.appendChild(btn);
+            }
+
+            
+        }
+        function game(text){
+            alert(text);
+        }
+        
+    </script>
+</html>

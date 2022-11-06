@@ -1,0 +1,23 @@
+1. Make new dict of department and classes - DONE
+2. Username and password
+
+Starts with class search bar up top
+
+When a class is entered, create a question asking element, and then populate with the questions asked for that class in the past 24 hours (green background is answered, red is not)
+if the question is green, if it is clicked, it will bring to another page that populates with all the answers to that particular question with an element for answering that question up top
+
+When a question is asked, it puts the information into the server
+
+Functions:
+
+getToken(user) -> token
+
+getClass(class_id) -> {questions(answer_id[])}
+
+getQuestion(question_id) -> {body(str), upvotes(num), downvotes(num), answers(answer_id[])}
+
+getAnswer(answer_id) -> {body(str), upvotes(num), downvotes(num)}
+
+postQuestion(class_id,body,token) -> void
+
+postAnswer(question_id, body, token) -> void

@@ -5,12 +5,31 @@
     <head>
         <meta charset="UTF-8">
         <title>StuCo - Student Cooperation</title>
+        <script src = 'main.js'></script>
+        <script src = 'questionAnswer.js'></script>
         <link rel="stylesheet" href="main.css">
+        <form id = "search"
         <script src = "main.js"></script>
     </head>
 
     <body>
         <button type="button"></button>
+        <script>
+            /*getQuestion(question_id) -> {body(str), upvotes(num), downvotes(num), answers(answer_id[])}
+
+            getAnswer(answer_id) -> {body(str), upvotes(num), downvotes(num)}*/
+            
+            let question = 0 //getQuestion(getCookie("question")); 
+            let answers = ["hi","test","b"]//question.answers;
+            
+            console.log(answers);
+            for(answer in answers){
+                console.log(answers[answer]);
+                
+            }
+
+        </script>
+        
     </body>
 
 </html>

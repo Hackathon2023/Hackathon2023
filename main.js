@@ -1,5 +1,5 @@
-import {Question} from questionAnswer.js
-import {Answer} from questionAnswer.js
+
+
 var currentPage = "login";
 var username;
 var password;
@@ -32,6 +32,10 @@ function checkQuestion()
     }
 }
 
+function getCookie(text){
+    const cookies = document.cookie.split('; ').find((row) => row.startsWith(text))?.split('=')[1];
+    return cookies;
+}
 checkUsername()
 
 function generateQuestions()
